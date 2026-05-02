@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #fbfcfd;
+  --bg-sidebar: #ffffff;
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-light: rgba(226, 232, 240, 0.8);
+}
+
+body {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium Card Style */
+.premium-card {
+  @apply bg-white border border-slate-100 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300;
+}
+
+.premium-card:hover {
+  @apply shadow-[0_20px_40px_rgb(0,0,0,0.08)] -translate-y-1;
+}
+
+/* Glass Effect */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+/* Sophisticated Buttons */
+.btn-premium {
+  @apply relative px-6 py-2.5 bg-slate-900 text-white rounded-xl font-semibold shadow-xl shadow-slate-200 transition-all duration-300 active:scale-95 hover:bg-slate-800 hover:-translate-y-0.5;
+}
+
+.btn-premium-blue {
+  @apply px-6 py-2.5 bg-blue-600 text-white rounded-xl font-semibold shadow-lg shadow-blue-100 transition-all duration-300 active:scale-95 hover:bg-blue-700 hover:-translate-y-0.5;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-premium {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Input Focus */
+.premium-input {
+  @apply w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 focus:bg-white transition-all duration-200;
+}
+
+/* Command Palette Styling */
+[cmdk-group-heading] {
+  padding: 12px 12px 8px;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8; /* text-slate-400 */
+}
